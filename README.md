@@ -11,6 +11,10 @@
 - 파일업로드&다운로드 로컬 실행시(application-local.yml에 pvc.path 파일저장 경로 설정 기본값 c:\temp)
 
 ## Application 동작 방법
+- run
+~~~bash
+mvc spring-boot:run
+~~~
 - 웹브라우저에서 서버 또는 로컬 8080 포트로 접속
 ~~~
 http://[hostname]:8080
