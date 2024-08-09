@@ -1,3 +1,6 @@
 spring:
   profiles:
     active: local
+  sql:
+    init:
+      encoding: utf-8
