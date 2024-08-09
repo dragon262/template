@@ -8,6 +8,7 @@
 - JPA를 사용하여 스키마 및 샘플 데이터 생성.
 - 로컬용 h2 mem db 샘플.
 - 개발용 postgresql 접속 템플릿.
+- 파일업로드&다운로드 로컬 실행시(application-local.yml에 pvc.path 파일저장 경로 설정 기본값 c:\temp)
 
 ## Application 동작 방법
 - 웹브라우저에서 서버 또는 로컬 8080 포트로 접속
