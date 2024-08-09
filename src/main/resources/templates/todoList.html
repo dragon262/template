@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo App</title>
+
+    <!-- bootstrap 4 -->
+    <link rel="stylesheet" th:href="@{css/bootstrap/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{css/todoList.css}">
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <script th:src="@{js/jQuery/jQuery3.3.1.js}"></script>
+    <script th:src="@{js/bootstrap/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="container my-5">
+    <h1>To do List</h1>
+    <div class="form-content">
+        <form onsubmit="return false">
+            <div class="input-group mb-3">
+                <input type="text" id="content" class="form-control" placeholder="Todo item">
+                <div class="input-group-append">
+                    <button type="button" id="addTodo" class="btn btn-primary">
+                        Add Todo
+                    </button>
+                </div>
+            </div>
+        </form>
+        <div id="todo-content" data-pno="" class="todo-content">
+        </div>
+    </div>
+    <!-- Pagination -->
+    <nav aria-label="Page navigation" style="text-align:center;">
+        <ul id="pagination" class="pagination pagination-sm justify-content-center"></ul>
+    </nav>
+    <!-- /Pagination -->
+</div>
+
+<div class="container my-5">
+    <h1>File List</h1>
+    <div class="form-content">
+        <form onsubmit="return false" id="uploadForm">
+            <div class="input-group mb-3">
+                <input type="file" id="file" name="file" class="form-control" placeholder="text file" accept=".txt">
+                <div class="input-group-append">
+                    <button type="button" id="addFile" class="btn btn-primary">
+                        Add File
+                    </button>
+                </div>
+            </div>
+        </form>
+        <div id="file-content" data-pno="" class="file-content">
+        </div>
+    </div>
+</div>
+
+<!-- modal -->
+<div class="modal fade" id="modifyModal" th:data-id="0" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">To do</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="modifyForm" onsubmit="return false">
+                    <div class="form-group">
+                        <label for="modifyContent" class="col-form-label">Todo Item</label>
+                        <textarea class="form-control" id="modifyContent"></textarea>
+                    </div>
+                    <div id="searchTodoItem">
+                        <div class="form-group">
+                            <label for="searchTodoItemContent" class="col-form-label">참조할 Todo 조회 (선택 시 참조 추가)</label>
+                            <input type="text" class="form-control" id="searchTodoItemContent" placeholder="Todo 명을 입력하세요.">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">조회 결과</label>
+                            <div style="max-height: 200px;overflow: auto;">
+                                <ul id="searchList" class="checked-list-box" style="padding-left: 0px;">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>참조 Todo 목록 (선택 시 참조 제거)</label>
+                        <div class="well" style="max-height: 300px;overflow-y: auto;">
+                            <div id="check-list-box" class="checked-list-box"></div>
+                        </div>
+                    </div>
+                    <div class="form-group" id="date"></div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-primary" id="modifyButton">수정</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{js/todoList.js}"></script>
+</body>
+</html>

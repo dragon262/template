@@ -1,0 +1,14 @@
+.todo-text {
+    flex: 1; /* 체크, 엑스를 제외한 공간 다 채우기 */
+    word-break: break-all;
+}
+
+.checked {
+    text-decoration: line-through;
+    color: #adb5bd;
+}
+
+#todo-content {
+    min-height: 410px;
+    max-height: 500px;
+}
