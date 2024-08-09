@@ -1,24 +1,7 @@
-# Cloud-Sample
+# template
 
 ## 프로젝트 설명
-샘플 프로젝트를 사용하여 CI/CD pipeline을 사용하여 Application 배포하는 법을 학습합니다.
-
-## 설치 방법
-1. 프로젝트를 fork하여 사용자별 repo에서 작업합니다.
-
-[포크만들기](https://learn.microsoft.com/ko-kr/azure/devops/repos/git/forks?view=azure-devops&tabs=visual-studio#create-a-fork)를 참조합니다.
-
-2. fork한 프로젝트에 `gradle.setting` 또는 `pom.xml` 파일을 열어 gradle 빌드하는경우 `rootProject.Name`를 원하는 프로젝트 명으로 변경, 
-   maven인경우 `<name><\name>`에 원하는 프로젝트명으로 변경합니다.
-
-## 학습 내용
-- Kubernates ConfigMap을 사용하여 환경에 따른 Application yml적용을 실습합니다.
-- Github Actions을 사용하여 Build(gradle, maven, ACR, AKS) 실습합니다.
-- AKS에서 DB 접속 실습합니다.
-
-## 샘플 Pipeline
-- CI: [Maven pipeline](https://dev.azure.com/ktds-playground/ce-pg-study/_git/cloud-sample?path=/azure-pipeline-ci-maven.yml&version=GBdevelop), [Gradle pipline](https://dev.azure.com/ktds-playground/ce-pg-study/_git/cloud-sample?path=%2Fazure-pipeline-ci-gradle.yml&version=GBdevelop)
-- [CD](https://dev.azure.com/ktds-playground/ce-pg-study/_git/cloud-sample?path=/azure-pipeline-cd.yml&version=GBdevelop)
+샘플 Spring boot Application
 
 ## 기능 목록
 - TODO List 목록 조회, 삭제, 수정.
